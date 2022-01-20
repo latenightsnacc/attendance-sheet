@@ -1,0 +1,19 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+}
+.form input {
+  outline: none;
+  focu
+}
