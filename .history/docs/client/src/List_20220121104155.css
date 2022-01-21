@@ -1,0 +1,12 @@
+.list {
+    width: 90%;
+    margin: auto;
+}
+h1 {
+    text-align: center;
+}
+.profile {
+    display: flex;
+    justify-content: space-between;
+    width: 100;
+}
