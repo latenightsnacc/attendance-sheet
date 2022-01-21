@@ -8,7 +8,6 @@ const List = () => {
         Axios.get("http://localhost:3030/corpers")
         .then((Response) => {
             setProfileList(Response.data);
-            console.log(profileList);
         });
     } catch (e) {
         console.log(e);
@@ -36,8 +35,8 @@ const List = () => {
             <table className='w-10/12 table-auto'>
                 <thead>
                     <th>
-                        <td>Name</td>
                         <td>State Code</td>
+                        <td>Name</td>
                         <td>Batch</td>
                         <td>PPA</td>
                         <td>Email</td>
@@ -51,7 +50,6 @@ const List = () => {
                     <tr className='row'>
                         <td className='data'>{val.state_code}</td> 
                        <td className='data'>{val.name}</td> 
-                       <td className='data'>{val.state_code}</td> 
                        <td className='data'>{val.email}</td> 
                        <td className='data'>{val.phone}</td> 
                        <td className='data'>{val.state}</td> 

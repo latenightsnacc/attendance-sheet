@@ -43,11 +43,22 @@ function App() {
     }
     
   }
-    
+
+  
+    const viewAll = () => {
+        try {
+            Axios.get("http://localhost:3030/profileList")
+            .then((Response) => {
+                setProfileList(Response.data);
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    }
   
   return (
-    <div className="App bg-gray-50">
-      <h1 className='text-4xl text-gray-700'>E-Attendance</h1>
+    <div className="App">
+      <h1>E-Attendance</h1>
       <form onSubmit={createProfile} className="form">
           <div className="form-group"> 
             <label for="name">Name</label>

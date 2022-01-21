@@ -8,7 +8,7 @@ const List = () => {
         Axios.get("http://localhost:3030/corpers")
         .then((Response) => {
             setProfileList(Response.data);
-            console.log(profileList);
+            con
         });
     } catch (e) {
         console.log(e);
