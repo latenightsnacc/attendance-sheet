@@ -34,6 +34,7 @@ const Members = () => {
                 <SpacerSm />
                 <div>
                     <span>Total: 170</span>
+                    <span>Active: 150</span>
                 </div>
             </div>
             <div>

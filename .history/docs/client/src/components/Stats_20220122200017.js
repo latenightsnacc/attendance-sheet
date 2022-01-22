@@ -8,7 +8,7 @@ const Stats = () => {
                 
                 <div className="h-4"></div>
                 <div className="flex flex-col items-center md:flex-row justify-evenly ">
-                    <Link to={"../dashboard/secretary-general/members"}>
+                    <Link to="../dashboard/secretary-general/Members">
                         <div className="border-0 hover:text-green-500 rounded by-white flex flex-col items-center p-3">
                             <span className="text-xl font-medium">172</span>
                             <span className="text-xs text-gray-500 font-light">Total Members</span>

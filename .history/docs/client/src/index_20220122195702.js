@@ -22,7 +22,7 @@ ReactDOM.render(
         <Route path="/list" element={<List />} />
         <Route path="/dashboard/member" element={<Member />} />
         <Route path="/dashboard/secretarygeneral" element={<SecretaryGeneral />} />
-        <Route path="/dashboard/secretary-general/members" element={<Members />} />
+        <Route path="/dashboard/secretarygeneral/members" element={<Members />} />
         <Route path="/dashboard/treasurer" element={<Treasurer />} />
         <Route path="/dashboard/president" element={<President />} />
         <Route path="/dashboard/coordinator" element={<Coordinator />} />

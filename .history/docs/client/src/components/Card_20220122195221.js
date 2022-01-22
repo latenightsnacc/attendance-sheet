@@ -1,8 +1,8 @@
 const Card = (props) => {
     return (
-        <div className="flex flex-row justify-between my-4">
-            <div className="w-3/12 h-44 bg-green-50"></div>
-            <ul className="w-9/12 pl-5">
+        <div className="flex flex-row justify-between">
+            <div></div>
+            <ul className="w-">
                 <li>Name: {props.name}</li>
                 <li>State Code: {props.stateCode}</li>
                 <li>Role: {props.role}</li>

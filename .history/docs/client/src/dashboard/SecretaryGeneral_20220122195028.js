@@ -29,8 +29,6 @@ const SecretaryGeneral = () => {
             <Spacer />
             
             <div className="w-full md:w-5/6 md:mx-auto">
-                <Menu />
-                <SpacerSm />
                 <Stats />
                 <Spacer />
                 {memberslist.map((val,key) => {

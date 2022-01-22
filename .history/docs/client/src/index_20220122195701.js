@@ -11,7 +11,6 @@ import SecretaryGeneral from './dashboard/SecretaryGeneral';
 import Treasurer from './dashboard/Treasurer';
 import President from './dashboard/President';
 import Coordinator from './dashboard/Coordinator';
-import Members from './dashboard/secretary-general/Members';
 
 
 ReactDOM.render(
@@ -22,7 +21,7 @@ ReactDOM.render(
         <Route path="/list" element={<List />} />
         <Route path="/dashboard/member" element={<Member />} />
         <Route path="/dashboard/secretarygeneral" element={<SecretaryGeneral />} />
-        <Route path="/dashboard/secretary-general/members" element={<Members />} />
+        <Route path="/dashboard/secretarygeneral/members" element={<Mem />} />
         <Route path="/dashboard/treasurer" element={<Treasurer />} />
         <Route path="/dashboard/president" element={<President />} />
         <Route path="/dashboard/coordinator" element={<Coordinator />} />
