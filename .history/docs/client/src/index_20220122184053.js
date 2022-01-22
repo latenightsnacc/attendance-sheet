@@ -6,11 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 import List from './List';
-import Member from './dashboard/Member';
-import SecretaryGeneral from './dashboard/SecretaryGeneral';
-import Treasurer from './dashboard/Treasurer';
-import President from './dashboard/President';
-import Coordinator from './dashboard/Coordinator';
 
 
 ReactDOM.render(
@@ -19,11 +14,6 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/list" element={<List />} />
-        <Route path="/dashboard/member" element={<Member />} />
-        <Route path="/dashboard/secretarygeneral" element={<SecretaryGeneral />} />
-        <Route path="/dashboard/treasurer" element={<Treasurer />} />
-        <Route path="/dashboard/president" element={<President />} />
-        <Route path="/dashboard/coordinator" element={<Coordinator />} />
       </Routes>
     </Router>
   </React.StrictMode>,

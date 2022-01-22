@@ -9,8 +9,6 @@ import List from './List';
 import Member from './dashboard/Member';
 import SecretaryGeneral from './dashboard/SecretaryGeneral';
 import Treasurer from './dashboard/Treasurer';
-import President from './dashboard/President';
-import Coordinator from './dashboard/Coordinator';
 
 
 ReactDOM.render(
@@ -23,7 +21,7 @@ ReactDOM.render(
         <Route path="/dashboard/secretarygeneral" element={<SecretaryGeneral />} />
         <Route path="/dashboard/treasurer" element={<Treasurer />} />
         <Route path="/dashboard/president" element={<President />} />
-        <Route path="/dashboard/coordinator" element={<Coordinator />} />
+        <Route path="/dashboard/coordinator" element={<List />} />
       </Routes>
     </Router>
   </React.StrictMode>,
