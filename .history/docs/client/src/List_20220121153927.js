@@ -33,7 +33,7 @@ const List = () => {
             <div>
                 <h3>{profileList.cds_group}Enugu State</h3>
             </div>
-            <table className='w-full bg-slate-50 table-auto text-left'>
+            <table className='w-10/12 table-auto'>
                 <thead>
                     <tr>
                         <th>Corper</th>

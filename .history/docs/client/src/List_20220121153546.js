@@ -33,40 +33,45 @@ const List = () => {
             <div>
                 <h3>{profileList.cds_group}Enugu State</h3>
             </div>
-            <table className='w-full bg-slate-50 table-auto text-left'>
+            <table className='w-10/12 table-auto'>
                 <thead>
                     <tr>
-                        <th>Corper</th>
-                        <th colSpan={5}>NYSC</th>
-                        <th>Contact</th>
+                    <th>
+                        <td>Corper</td>
+                        <td colSpan={5}>NYSC</td>
+                        <td>Contact</td>
+                    </th>
+                    <th>NYSC</th>
+                    <th>Contact</th>
                     </tr>
-                    <tr>
-                        <th>Name</th>
-                        <th>Batch</th>
-                        <th>State Code</th>
-                        <th>State</th>
-                        <th>L.G.A</th>
-                        <th>PPA</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                    </tr>
+                    <tr></tr>
+                    
+                    <th>
+                        <td>Name</td>
+                        <td>Batch</td>
+                        <td>State Code</td>
+                        <td>State</td>
+                        <td>L.G.A</td>
+                        <td>PPA</td>
+                        <td>Email</td>
+                        <td>Phone</td>
+
+                    </th>
                 </thead>
                 <tbody>
                 {profileList.map((val, key) => {
                 return(
                     <tr className='row'>
-                         
-                       <td className='data'>{val.name}</td>
-                       <td className='data'>Batch 21A</td> 
-                       <td className='data'>{val.state_code}</td>
-                       <td className='data'>{val.state}</td>
-                       <td className='data'>{val.lga}</td>  
-                       <td className='data'>{val.ppa}</td>    
+                        <td className='data'>{val.state_code}</td> 
+                       <td className='data'>{val.name}</td> 
+                       <td className='data'>{val.state_code}</td> 
                        <td className='data'>{val.email}</td> 
                        <td className='data'>{val.phone}</td> 
+                       <td className='data'>{val.state}</td> 
                        
-                       
-                       
+                       <td className='data'>{val.lga}</td> 
+                       <td className='data'>{val.cds_group}</td> 
+                       <td className='data'>{val.ppa}</td>  
                     </tr>
                 )
                 

@@ -33,7 +33,7 @@ const List = () => {
             <div>
                 <h3>{profileList.cds_group}Enugu State</h3>
             </div>
-            <table className='w-full bg-slate-50 table-auto text-left'>
+            <table className='w-10/12 table-auto'>
                 <thead>
                     <tr>
                         <th>Corper</th>
@@ -57,11 +57,10 @@ const List = () => {
                     <tr className='row'>
                          
                        <td className='data'>{val.name}</td>
-                       <td className='data'>Batch 21A</td> 
+                       <td className='data'>{val.state_code}</td> 
                        <td className='data'>{val.state_code}</td>
                        <td className='data'>{val.state}</td>
-                       <td className='data'>{val.lga}</td>  
-                       <td className='data'>{val.ppa}</td>    
+                         
                        <td className='data'>{val.email}</td> 
                        <td className='data'>{val.phone}</td> 
                        
