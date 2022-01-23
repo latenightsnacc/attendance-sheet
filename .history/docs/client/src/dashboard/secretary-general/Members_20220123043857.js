@@ -89,6 +89,13 @@ const Members = () => {
                         <td>{val.ppa}</td>
                         <td>{val.phone}</td>
                         <td>{"Active"} </td>
+                        stateCode= 
+                        batch=
+                        role=
+                        lga=
+                        ppa=
+                        contact=
+                        status = 
                     </tr>
                 })}
                 </tbody>

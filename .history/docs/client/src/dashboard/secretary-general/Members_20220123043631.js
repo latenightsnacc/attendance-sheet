@@ -79,16 +79,15 @@ const Members = () => {
                 </thead>
                 <tbody>
                 {memberslist.map((val,key) => {
-                    return <tr> 
-                        <td> 1</td>
-                        <td>{val.name}</td>
-                        <td>{val.state_code}</td>
-                        <td>{'18A'}</td>
-                        <td>{'Member'}</td>
-                        <td>{val.lga}</td>
-                        <td>{val.ppa}</td>
-                        <td>{val.phone}</td>
-                        <td>{"Active"} </td>
+                    return <tr 
+                        name={val.name} 
+                        stateCode={val.state_code} 
+                        batch={'18A'}
+                        role={'Member'}
+                        lga={val.lga}
+                        ppa={val.ppa}
+                        contact={val.phone}
+                        status = {"Active"} 
                     </tr>
                 })}
                 </tbody>

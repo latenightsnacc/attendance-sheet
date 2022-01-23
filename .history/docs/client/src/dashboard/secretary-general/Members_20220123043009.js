@@ -54,7 +54,7 @@ const Members = () => {
                     return <Card 
                         name={val.name} 
                         stateCode={val.state_code} 
-                        batch={'18A'}
+                        batch={}
                         role={'Member'}
                         lga={val.lga}
                         ppa={val.ppa}
@@ -69,29 +69,10 @@ const Members = () => {
                         <tr class="h-8">
                             <th scope="col" class="text-left w-auto">No.</th>
                             <th scope="col" class="text-left hidden md:table-cell">Name</th>
+                            <th scope="col" class="text-center  hidden md:table-cell"> Batch</th>
                             <th scope="col" class="text-left">Statecode</th>
-                            <th scope="col" class="text-center  hidden md:table-cell">Role</th>
-                            <th scope="col" class="text-center  hidden md:table-cell"> L.G.A</th>
-                            <th scope="col" class="text-center  hidden md:table-cell"> P.P.A</th>
-                            <th scope="col" class="text-center  hidden md:table-cell"> Contact</th>
-                            <th scope="col" class="text-center  hidden md:table-cell"> Status</th>
                         </tr>
                 </thead>
-                <tbody>
-                {memberslist.map((val,key) => {
-                    return <tr> 
-                        <td> 1</td>
-                        <td>{val.name}</td>
-                        <td>{val.state_code}</td>
-                        <td>{'18A'}</td>
-                        <td>{'Member'}</td>
-                        <td>{val.lga}</td>
-                        <td>{val.ppa}</td>
-                        <td>{val.phone}</td>
-                        <td>{"Active"} </td>
-                    </tr>
-                })}
-                </tbody>
             </table>
             </div>
             

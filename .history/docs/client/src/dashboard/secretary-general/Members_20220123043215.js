@@ -73,25 +73,11 @@ const Members = () => {
                             <th scope="col" class="text-center  hidden md:table-cell">Role</th>
                             <th scope="col" class="text-center  hidden md:table-cell"> L.G.A</th>
                             <th scope="col" class="text-center  hidden md:table-cell"> P.P.A</th>
-                            <th scope="col" class="text-center  hidden md:table-cell"> Contact</th>
-                            <th scope="col" class="text-center  hidden md:table-cell"> Status</th>
+                            <th scope="col" class="text-center  hidden md:table-cell"> Batch</th>
+                            <th scope="col" class="text-center  hidden md:table-cell"> Batch</th>
+                            
                         </tr>
                 </thead>
-                <tbody>
-                {memberslist.map((val,key) => {
-                    return <tr> 
-                        <td> 1</td>
-                        <td>{val.name}</td>
-                        <td>{val.state_code}</td>
-                        <td>{'18A'}</td>
-                        <td>{'Member'}</td>
-                        <td>{val.lga}</td>
-                        <td>{val.ppa}</td>
-                        <td>{val.phone}</td>
-                        <td>{"Active"} </td>
-                    </tr>
-                })}
-                </tbody>
             </table>
             </div>
             

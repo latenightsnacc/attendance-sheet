@@ -86,9 +86,16 @@ const Members = () => {
                         <td>{'18A'}</td>
                         <td>{'Member'}</td>
                         <td>{val.lga}</td>
-                        <td>{val.ppa}</td>
-                        <td>{val.phone}</td>
-                        <td>{"Active"} </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        stateCode= 
+                        batch=
+                        role=
+                        lga=
+                        ppa={val.ppa}
+                        contact={val.phone}
+                        status = {"Active"} 
                     </tr>
                 })}
                 </tbody>

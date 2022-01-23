@@ -54,7 +54,6 @@ const Members = () => {
                     return <Card 
                         name={val.name} 
                         stateCode={val.state_code} 
-                        batch={'18A'}
                         role={'Member'}
                         lga={val.lga}
                         ppa={val.ppa}
@@ -64,35 +63,7 @@ const Members = () => {
                 })}
             </div>
             <div>
-            <table className="table table-sm table-auto table-bordered border-success table-hover text-xs md:text-sm bg-white rounded">
-                <thead>
-                        <tr class="h-8">
-                            <th scope="col" class="text-left w-auto">No.</th>
-                            <th scope="col" class="text-left hidden md:table-cell">Name</th>
-                            <th scope="col" class="text-left">Statecode</th>
-                            <th scope="col" class="text-center  hidden md:table-cell">Role</th>
-                            <th scope="col" class="text-center  hidden md:table-cell"> L.G.A</th>
-                            <th scope="col" class="text-center  hidden md:table-cell"> P.P.A</th>
-                            <th scope="col" class="text-center  hidden md:table-cell"> Contact</th>
-                            <th scope="col" class="text-center  hidden md:table-cell"> Status</th>
-                        </tr>
-                </thead>
-                <tbody>
-                {memberslist.map((val,key) => {
-                    return <tr> 
-                        <td> 1</td>
-                        <td>{val.name}</td>
-                        <td>{val.state_code}</td>
-                        <td>{'18A'}</td>
-                        <td>{'Member'}</td>
-                        <td>{val.lga}</td>
-                        <td>{val.ppa}</td>
-                        <td>{val.phone}</td>
-                        <td>{"Active"} </td>
-                    </tr>
-                })}
-                </tbody>
-            </table>
+            <table class="table table-sm table-auto table-bordered border-success table-hover text-xs md:text-sm   bg-white rounded">
             </div>
             
             

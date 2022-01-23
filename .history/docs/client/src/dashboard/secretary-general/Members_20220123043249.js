@@ -78,19 +78,7 @@ const Members = () => {
                         </tr>
                 </thead>
                 <tbody>
-                {memberslist.map((val,key) => {
-                    return <tr> 
-                        <td> 1</td>
-                        <td>{val.name}</td>
-                        <td>{val.state_code}</td>
-                        <td>{'18A'}</td>
-                        <td>{'Member'}</td>
-                        <td>{val.lga}</td>
-                        <td>{val.ppa}</td>
-                        <td>{val.phone}</td>
-                        <td>{"Active"} </td>
-                    </tr>
-                })}
+                    
                 </tbody>
             </table>
             </div>
