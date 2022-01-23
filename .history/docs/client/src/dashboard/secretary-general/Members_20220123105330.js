@@ -12,15 +12,6 @@ const Members = () => {
     const [memberslist, setMembersList] = useState([]);
     const [displayCards, setDisplayCards] = useState(false);
 
-    try {
-        Axios.get("http://localhost:3030/corpers")
-        .then((Response) => {
-            setMembersList(Response.data);
-        });
-    } catch (e) {
-        console.log(e);
-    }
-
     const showTable = () => {
         toggleCardDisplay();
         try {
@@ -79,8 +70,6 @@ const Members = () => {
                 <div>
                 {memberslist.map((val,key) => {
                         return <Card 
-                            imgSrc={val.profile_pic}
-                            altText={val.name}
                             name={val.name} 
                             stateCode={val.state_code} 
                             batch={'18A'}
@@ -90,7 +79,7 @@ const Members = () => {
                             contact={val.phone}
                             status = {"Active"} 
                         />
-                    })}
+                    }): {showBlank}}
                 </div>
                 <div className="hidden">
                 <table className="table table-sm table-auto table-bordered border-success table-hover text-xs md:text-sm bg-white rounded">

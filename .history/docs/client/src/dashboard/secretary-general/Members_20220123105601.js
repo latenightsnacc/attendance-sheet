@@ -20,7 +20,7 @@ const Members = () => {
     } catch (e) {
         console.log(e);
     }
-
+    
     const showTable = () => {
         toggleCardDisplay();
         try {
@@ -79,8 +79,6 @@ const Members = () => {
                 <div>
                 {memberslist.map((val,key) => {
                         return <Card 
-                            imgSrc={val.profile_pic}
-                            altText={val.name}
                             name={val.name} 
                             stateCode={val.state_code} 
                             batch={'18A'}

@@ -79,8 +79,7 @@ const Members = () => {
                 <div>
                 {memberslist.map((val,key) => {
                         return <Card 
-                            imgSrc={val.profile_pic}
-                            altText={val.name}
+                            img={}
                             name={val.name} 
                             stateCode={val.state_code} 
                             batch={'18A'}

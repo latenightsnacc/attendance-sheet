@@ -2,7 +2,7 @@ const Card = (props) => {
     return (
         <div className="flex flex-row justify-between my-4">
             <div className="w-3/12 h-44 bg-green-50">
-                <img src={props.imgSrc} alt={props.altText} />
+                <img src={props.img} alt={props.altText} />
             </div>
             <ul className="w-9/12 pl-5">
                 <li>Name: {props.name}</li>
