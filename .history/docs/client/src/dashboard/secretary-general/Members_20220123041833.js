@@ -19,17 +19,6 @@ const Members = () => {
         console.log(e);
     }
 
-    const tableView = () => {
-        try {
-            Axios.get("http://localhost:3030/corpers")
-            .then((Response) => {
-                setMembersList(Response.data);
-            });
-        } catch (e) {
-            console.log(e);
-        }
-    }
-
     return(
         <>
             <Navbar />
@@ -45,8 +34,6 @@ const Members = () => {
                 <SpacerSm />
                 <div>
                     <span>Total: 170</span>
-                    <button>Card view</button>
-                    <button onClick={tableView}>Table View</button>
                 </div>
             </div>
             <div>
@@ -58,7 +45,7 @@ const Members = () => {
                         lga={val.lga}
                         ppa={val.ppa}
                         contact={val.phone}
-                        status = {"Active"} 
+                        status 
                     />
                 })}
             </div>

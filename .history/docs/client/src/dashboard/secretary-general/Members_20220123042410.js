@@ -46,7 +46,7 @@ const Members = () => {
                 <div>
                     <span>Total: 170</span>
                     <button>Card view</button>
-                    <button onClick={tableView}>Table View</button>
+                    <button on>Table View</button>
                 </div>
             </div>
             <div>

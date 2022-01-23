@@ -19,16 +19,7 @@ const Members = () => {
         console.log(e);
     }
 
-    const tableView = () => {
-        try {
-            Axios.get("http://localhost:3030/corpers")
-            .then((Response) => {
-                setMembersList(Response.data);
-            });
-        } catch (e) {
-            console.log(e);
-        }
-    }
+    const tableView
 
     return(
         <>
@@ -46,7 +37,7 @@ const Members = () => {
                 <div>
                     <span>Total: 170</span>
                     <button>Card view</button>
-                    <button onClick={tableView}>Table View</button>
+                    <button>Table View</button>
                 </div>
             </div>
             <div>
