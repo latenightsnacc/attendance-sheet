@@ -18,25 +18,21 @@ const Members = () => {
             Axios.get("http://localhost:3030/corpers")
             .then((Response) => {
                 setMembersList(Response.data);
-                setIsLoading(false);
+                setIsLoading(false)
             });
         } catch (e) {
             console.log(e);
-            setIsLoading(false);
         }
     }
     
     const  showCards = () => {
         try {
-            setIsLoading(true);
             Axios.get("http://localhost:3030/corpers")
             .then((Response) => {
                 setMembersList(Response.data);
-                setIsLoading(false);
             });
         } catch (e) {
             console.log(e);
-            setIsLoading(false);
         }   
     }
 
@@ -62,8 +58,8 @@ const Members = () => {
                         
                     </div>
                 </div>
-                {/* <div>
-                    {isLoading ? memberslist.map((val,key) => {
+                <div>
+                    {memberslist.map((val,key) => {
                         return (
                             <Card 
                                 imgSrc={val.profile_pic}
@@ -77,9 +73,9 @@ const Members = () => {
                                 contact={val.phone}
                             />
                         )
-                    }): ''}
-                </div> */}
-                {/* <div>
+                    })}
+                </div>
+                <div>
                     {memberslist.map((val,key) => {
                             return (
                                 <Table 
@@ -93,7 +89,7 @@ const Members = () => {
                                 phone={val.phone}
                             /> )
                         })}
-                </div> */}
+                </div>
                 
                 
                 <Spacer />

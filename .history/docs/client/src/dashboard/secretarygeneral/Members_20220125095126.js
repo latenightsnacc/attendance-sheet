@@ -62,7 +62,7 @@ const Members = () => {
                         
                     </div>
                 </div>
-                {/* <div>
+                <div>
                     {isLoading ? memberslist.map((val,key) => {
                         return (
                             <Card 
@@ -78,7 +78,7 @@ const Members = () => {
                             />
                         )
                     }): ''}
-                </div> */}
+                </div>
                 {/* <div>
                     {memberslist.map((val,key) => {
                             return (

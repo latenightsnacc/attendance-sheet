@@ -14,7 +14,7 @@ const Members = () => {
     
     const showTable = () => {
         try {
-            setIsLoading(true);
+            
             Axios.get("http://localhost:3030/corpers")
             .then((Response) => {
                 setMembersList(Response.data);
@@ -28,15 +28,12 @@ const Members = () => {
     
     const  showCards = () => {
         try {
-            setIsLoading(true);
             Axios.get("http://localhost:3030/corpers")
             .then((Response) => {
                 setMembersList(Response.data);
-                setIsLoading(false);
             });
         } catch (e) {
             console.log(e);
-            setIsLoading(false);
         }   
     }
 
@@ -62,7 +59,7 @@ const Members = () => {
                         
                     </div>
                 </div>
-                {/* <div>
+                <div>
                     {isLoading ? memberslist.map((val,key) => {
                         return (
                             <Card 
@@ -78,7 +75,7 @@ const Members = () => {
                             />
                         )
                     }): ''}
-                </div> */}
+                </div>
                 {/* <div>
                     {memberslist.map((val,key) => {
                             return (
