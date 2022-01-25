@@ -1,11 +1,15 @@
 import {Link}  from "react-router-dom";
+
 import Spacer from "../../components/Spacer";
+// import Card from "../../components/Card";
 import SpacerSm from "../../components/SpacerSm";
 import Navbar from "../../components/Navbar";
 import Table from "../../components/Table";
-import Footer from "../../components/Footer";
+import CardView from "../../components/CardView";
 
 const Members = () => {
+
+
     return(
         <>
             <Navbar />
@@ -29,9 +33,13 @@ const Members = () => {
                     </div>
                 </div>
                 <Spacer />
-                <Table />  
+
+                
+                <Table />
+                
+                
+                
             </div>
-            <Footer />
         </>
     )
                 

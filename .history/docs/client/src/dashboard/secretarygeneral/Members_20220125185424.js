@@ -3,7 +3,6 @@ import Spacer from "../../components/Spacer";
 import SpacerSm from "../../components/SpacerSm";
 import Navbar from "../../components/Navbar";
 import Table from "../../components/Table";
-import Footer from "../../components/Footer";
 
 const Members = () => {
     return(
@@ -31,7 +30,7 @@ const Members = () => {
                 <Spacer />
                 <Table />  
             </div>
-            <Footer />
+            
         </>
     )
                 
