@@ -12,14 +12,14 @@ const Members = () => {
     const [memberslist, setMembersList] = useState([]);
     const [displayCards, setDisplayCards] = useState(false);
 
-    try {
-        Axios.get("http://localhost:3030/corpers")
-        .then((Response) => {
-            setMembersList(Response.data);
-        });
-    } catch (e) {
-        console.log(e);
-    }
+    // try {
+    //     Axios.get("http://localhost:3030/corpers")
+    //     .then((Response) => {
+    //         setMembersList(Response.data);
+    //     });
+    // } catch (e) {
+    //     console.log(e);
+    // }
 
     const showTable = () => {
         toggleCardDisplay();
@@ -47,9 +47,9 @@ const Members = () => {
             }
         
     }
-    const showBlank = () => {
-        console.log('Blank display');
-    }
+    // const showBlank = () => {
+    //     console.log('Blank display');
+    // }
 
     
 
@@ -58,20 +58,20 @@ const Members = () => {
             <Navbar />
             <div className="w-full md:w-5/6 md:mx-auto">
                 <div className="container text-gray-800">
-                    <div className="flex flex-row h-full items-center mt-5">
-                        <Link to={"/dashboard/secretarygeneral"}>
-                            <span className="text-xl text-gray-300 hover:cusor-pointer hover:text-green-500"><i className="fas fa-angle-left"></i></span>
-                        </Link>
-                        
-                        <h1 className="font-semibold text-3xl ml-5">List of ICT Members</h1>
-                    </div>
+                    
                     <SpacerSm />
                
-                    <div className="flex flex-row justify-between">
-                        <span className="my-1 mr-1 lg:mr-2 inline-block px-3 py-2 rounded  tracking-wide text-gray-800 bg-gray-100 bg-opacity-50 hover:bg-green-100 text-xs text-left md:text-right md:text-sm capitalize shadow-sm flex items-center">Total: 170</span>
-                        <div className="flex flex-row">
-                            <button className="my-1 mr-1 lg:mr-2 inline-block px-3 py-2 rounded  tracking-wide text-gray-800 bg-gray-100 bg-opacity-50 hover:bg-green-100 text-xs text-left md:text-right md:text-sm capitalize shadow-sm flex items-center" onClick={showCards}>Card view</button>
-                            <button className="my-1 mr-1 lg:mr-2 inline-block px-3 py-2 rounded  tracking-wide text-gray-800 bg-gray-100 bg-opacity-50 hover:bg-green-100 text-xs text-left md:text-right md:text-sm capitalize shadow-sm flex items-center" onClick={showTable}>Table View</button>
+                    <div className="flex flex-row items-center justify-between">
+                        <div className="flex flex-row h-full items-center mt-5">
+                            <Link to={"/dashboard/secretarygeneral"}>
+                                <span className="text-xl text-gray-300 hover:cusor-pointer hover:text-green-500"><i className="fas fa-angle-left"></i></span>
+                            </Link> 
+                            <h1 className="font-semibold text-3xl ml-5 ">List of ICT Members</h1>
+
+                        </div> 
+                        <div className="flex flex-row items-center">
+                            <button className="h-12  mr-1 lg:mr-2 inline-block px-3 py-2 rounded  tracking-wide text-gray-800 bg-gray-100 bg-opacity-50 hover:bg-green-100 text-xs text-left md:text-right md:text-sm capitalize shadow-sm flex items-center" onClick={showCards}>Card view</button>
+                            <button className=" h-12  mr-1 lg:mr-2 inline-block px-3 py-2 rounded  tracking-wide text-gray-800 bg-gray-100 bg-opacity-50 hover:bg-green-100 text-xs text-left md:text-right md:text-sm capitalize shadow-sm flex items-center" onClick={showTable}>Table View</button>
                         </div>
                         
                     </div>
@@ -88,7 +88,7 @@ const Members = () => {
                             lga={val.lga}
                             ppa={val.ppa}
                             contact={val.phone}
-                            status = {"Active"} 
+                             
                         />
                     })}
                 </div>
