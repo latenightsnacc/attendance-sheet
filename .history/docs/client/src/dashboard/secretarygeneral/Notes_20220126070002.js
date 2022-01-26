@@ -1,0 +1,40 @@
+import { Link } from "react-router-dom";
+import Menu from "../../components/Menu";
+import Banner from "../../components/Banner";
+import Spacer from "../../components/Spacer";
+import Navbar from "../../components/Navbar";
+import Summary from "../../components/Summary";
+import Footer from "../../components/Footer";;
+
+const Notes = () => {
+    
+    return(
+        <div>
+            <Navbar />
+            <Banner />
+            <Menu />
+            <div className="w-full md:w-5/6 md:mx-auto">
+                <Spacer />
+                <div className="flex flex-row items-center justify-between">
+                    <h2 className="ml-5 text-gray-800 text-xl">Recent</h2>
+                    <Link to={"/dashboard/secretarygeneral/new"}>
+
+                    </Link>
+                    
+                </div>
+                
+                <Summary />
+                <Summary />
+                <Summary />
+                <Spacer />
+            </div>
+            
+            
+            
+            <Footer />
+        </div>
+
+    )
+}
+
+export default Notes;
