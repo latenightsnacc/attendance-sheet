@@ -36,7 +36,7 @@ const New = () => {
         formData.append('topic', details.topic);
         formData.append('minutes', details.minutes);
         formData.append('for', details.for);
-        formData.append('date', details.date);
+        formData.append('for', details.for);
         try {
           await Axios.post("http://localhost:3030/createNew", 
           formData, {

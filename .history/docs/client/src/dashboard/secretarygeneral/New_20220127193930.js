@@ -68,7 +68,7 @@ const New = () => {
             <div className="m-auto md:w-4/6 w-full">
                 <form className="text-sm text-gray-700">
                 <div className="m-auto  w-full flex flex-row items-center justify-between">
-                    <div className="flex border-1 py-2 px-3 rounded flex-row items-center text-sm">
+                    <div className="flex border-1 py-2 px-3 rounded flex-row items-center text-xs">
                         {/* <div class="no-underline rounded py-2 px-3 bg-green-100 cursor-pointer hover:bg-green-100 text-gray-800 hover:text-gray-800"><span class="md:hidden">M</span><span class="hidden md:inline">Meeting</span></div> */}
                         <div className="flex flex-row items-center">
                             

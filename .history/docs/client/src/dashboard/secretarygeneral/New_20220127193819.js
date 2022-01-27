@@ -7,9 +7,9 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 const New = () => {
-    // let today = new Date();
-    // let date = new Date(Date.parse(today));
-    // let todayDate = date.toLocaleString();
+    let today = new Date();
+    let date = new Date(Date.parse(today));
+    let todayDate = date.toLocaleString();
 
     const [details, setDetails] = useState({
         startTime: '',
@@ -18,7 +18,7 @@ const New = () => {
         topic: '',
         minutes: '',
         for: '',
-        date: ''
+        date: '',
       });
     
       const getDetails = e => {
@@ -36,7 +36,6 @@ const New = () => {
         formData.append('topic', details.topic);
         formData.append('minutes', details.minutes);
         formData.append('for', details.for);
-        formData.append('date', details.date);
         try {
           await Axios.post("http://localhost:3030/createNew", 
           formData, {

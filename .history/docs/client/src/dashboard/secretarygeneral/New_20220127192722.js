@@ -7,9 +7,9 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 const New = () => {
-    // let today = new Date();
-    // let date = new Date(Date.parse(today));
-    // let todayDate = date.toLocaleString();
+    let today = new Date();
+    let date = new Date(Date.parse(today));
+    let todayDate = date.toLocaleString();
 
     const [details, setDetails] = useState({
         startTime: '',
@@ -17,8 +17,7 @@ const New = () => {
         venue: '',
         topic: '',
         minutes: '',
-        for: '',
-        date: ''
+        type: '',
       });
     
       const getDetails = e => {
@@ -35,8 +34,7 @@ const New = () => {
         formData.append('venue', details.venue);
         formData.append('topic', details.topic);
         formData.append('minutes', details.minutes);
-        formData.append('for', details.for);
-        formData.append('date', details.date);
+        formData.append('type', details.type);
         try {
           await Axios.post("http://localhost:3030/createNew", 
           formData, {
@@ -68,34 +66,19 @@ const New = () => {
             <div className="m-auto md:w-4/6 w-full">
                 <form className="text-sm text-gray-700">
                 <div className="m-auto  w-full flex flex-row items-center justify-between">
-                    <div className="flex border-1 py-2 px-3 rounded flex-row items-center text-sm">
-                        {/* <div class="no-underline rounded py-2 px-3 bg-green-100 cursor-pointer hover:bg-green-100 text-gray-800 hover:text-gray-800"><span class="md:hidden">M</span><span class="hidden md:inline">Meeting</span></div> */}
-                        <div className="flex flex-row items-center">
-                            
-                            <input
-                                type={"radio"}
-                                id="meeting"
-                                name="meeting" 
-                                value={"meeting"}
-                                className="border-1 rounded py-2 px-3 focus:outline-none"
-                            />  
-                            <label className="ml-2" for={"meeting"}>Meeting </label>
-                        </div>
-                        <div className="flex flex-row items-center ml-2">
-                            <input
-                                type={"radio"}
-                                id="event"
-                                name="event" 
-                                value={"event"}
-                                className="border-1 rounded py-2 px-3 focus:outline-none"
-                            /> 
-                            <label className="ml-2" for={"event"}>Event</label>
-                        </div>
-                        
-                        {/* <div class="ml-2 no-underline rounded py-2 px-3 bg-gray-100 cursor-pointer hover:bg-yellow-100 text-gray-800 hover:text-gray-800"><span class="md:hidden">E</span><span class="hidden md:inline">Event</span></div> */}
+                    <div className="flex flex-row items-center text-sm">
+                        <div class="no-underline rounded py-2 px-3 bg-green-100 cursor-pointer hover:bg-green-100 text-gray-800 hover:text-gray-800"><span class="md:hidden">M</span><span class="hidden md:inline">Meeting</span></div>
+                        <input
+                            type={"radio"}
+                            id="date"
+                            name="date" 
+                            className="border-1 rounded py-2 px-3 focus:outline-none"
+                        /> 
+                         <label className="ml-2" for={"startTime"}>Meeting </label>
+                        <div class="ml-2 no-underline rounded py-2 px-3 bg-gray-100 cursor-pointer hover:bg-yellow-100 text-gray-800 hover:text-gray-800"><span class="md:hidden">E</span><span class="hidden md:inline">Event</span></div>
                     </div>
                     <div>
-                            <label className="mr-2" for={"date"}>Date: </label>
+                            <label className="mr-2" for={"startTime"}>Date: </label>
                             <input
                             type={"date"}
                             id="date"

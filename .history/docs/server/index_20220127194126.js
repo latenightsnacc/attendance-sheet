@@ -65,6 +65,7 @@ app.post('/create', async (req, res) => {
             const ppa = req.body.ppa;
             const profilePic = req.file.filename;
         
+
             db.query('INSERT INTO corpers (name, email, phone, state, state_code, batch, lga, cds_group, ppa, profile_pic) VALUES(?,?,?,?,?,?,?,?,?,?)', [name,email,phone,state,statecode,batch,lga,cds,ppa,profilePic], (err, result) => {
                 if(err){
                     console.log(err)
@@ -82,22 +83,39 @@ app.post('/create', async (req, res) => {
 // Route for post minutes
 app.post('/createNew', async (req, res) => {
     try {
-        const type = req.body.type;
-            const date = req.body.date;
-            const venue = req.body.venue;
-            const topic = req.body.topic;
-            const startTime = req.body.startTime;
-            const endTime = req.body.endTime;
-            const minutes = req.body.minutes;
+        let upload = multer({ storage: storage}).single('profilePic');
+
+        upload(req, res, function(err) {
+            if (!req.file) {
+                return res.send('Please select an image to upload');
+
+            } else if (err instanceof multer.MulterError) {
+                return res.send(err);
+                
+            } else if (err) {
+                return res.send(err);
+            }
+            const name = req.body.name;
+            const email = req.body.email;
+            const phone = req.body.phone;
+            const state = req.body.state;
+            const statecode = req.body.statecode;
+            const batch = req.body.batch;
+            const lga = req.body.lga;
+            const cds = req.body.cds;
+            const ppa = req.body.ppa;
+            const profilePic = req.file.filename;
         
+
             db.query('INSERT INTO corpers (name, email, phone, state, state_code, batch, lga, cds_group, ppa, profile_pic) VALUES(?,?,?,?,?,?,?,?,?,?)', [name,email,phone,state,statecode,batch,lga,cds,ppa,profilePic], (err, result) => {
                 if(err){
                     console.log(err)
                 } else {
                     res.send("Values Inserted");
-                    console.log(`${req.body.type} minutes created.`);
+                    console.log('Profile created.');
                 }
             })
+        })
     } catch (e) {
         console.log(e);
     }    

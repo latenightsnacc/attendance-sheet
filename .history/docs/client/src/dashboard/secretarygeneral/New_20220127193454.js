@@ -7,9 +7,9 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 const New = () => {
-    // let today = new Date();
-    // let date = new Date(Date.parse(today));
-    // let todayDate = date.toLocaleString();
+    let today = new Date();
+    let date = new Date(Date.parse(today));
+    let todayDate = date.toLocaleString();
 
     const [details, setDetails] = useState({
         startTime: '',
@@ -17,8 +17,7 @@ const New = () => {
         venue: '',
         topic: '',
         minutes: '',
-        for: '',
-        date: ''
+        type: '',
       });
     
       const getDetails = e => {
@@ -35,8 +34,7 @@ const New = () => {
         formData.append('venue', details.venue);
         formData.append('topic', details.topic);
         formData.append('minutes', details.minutes);
-        formData.append('for', details.for);
-        formData.append('date', details.date);
+        formData.append('type', details.type);
         try {
           await Axios.post("http://localhost:3030/createNew", 
           formData, {
@@ -78,7 +76,14 @@ const New = () => {
                                 name="meeting" 
                                 value={"meeting"}
                                 className="border-1 rounded py-2 px-3 focus:outline-none"
-                            />  
+                            /> 
+                            <input
+                                type={"radio"}
+                                id="meeting"
+                                name="meeting" 
+                                value={"meeting"}
+                                className="border-1 rounded py-2 px-3 focus:outline-none"
+                            /> 
                             <label className="ml-2" for={"meeting"}>Meeting </label>
                         </div>
                         <div className="flex flex-row items-center ml-2">

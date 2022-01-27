@@ -65,6 +65,7 @@ app.post('/create', async (req, res) => {
             const ppa = req.body.ppa;
             const profilePic = req.file.filename;
         
+
             db.query('INSERT INTO corpers (name, email, phone, state, state_code, batch, lga, cds_group, ppa, profile_pic) VALUES(?,?,?,?,?,?,?,?,?,?)', [name,email,phone,state,statecode,batch,lga,cds,ppa,profilePic], (err, result) => {
                 if(err){
                     console.log(err)
@@ -87,17 +88,24 @@ app.post('/createNew', async (req, res) => {
             const venue = req.body.venue;
             const topic = req.body.topic;
             const startTime = req.body.startTime;
-            const endTime = req.body.endTime;
+            const startTime = req.body.startTime;
             const minutes = req.body.minutes;
+            const lga = req.body.lga;
+            const cds = req.body.cds;
+            const ppa = req.body.ppa;
+            const profilePic = req.file.filename;
         
+
             db.query('INSERT INTO corpers (name, email, phone, state, state_code, batch, lga, cds_group, ppa, profile_pic) VALUES(?,?,?,?,?,?,?,?,?,?)', [name,email,phone,state,statecode,batch,lga,cds,ppa,profilePic], (err, result) => {
                 if(err){
                     console.log(err)
                 } else {
                     res.send("Values Inserted");
-                    console.log(`${req.body.type} minutes created.`);
+                    console.log('Profile created.');
                 }
             })
+
+        
     } catch (e) {
         console.log(e);
     }    

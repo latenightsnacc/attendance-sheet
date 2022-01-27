@@ -65,6 +65,7 @@ app.post('/create', async (req, res) => {
             const ppa = req.body.ppa;
             const profilePic = req.file.filename;
         
+
             db.query('INSERT INTO corpers (name, email, phone, state, state_code, batch, lga, cds_group, ppa, profile_pic) VALUES(?,?,?,?,?,?,?,?,?,?)', [name,email,phone,state,statecode,batch,lga,cds,ppa,profilePic], (err, result) => {
                 if(err){
                     console.log(err)
@@ -74,30 +75,6 @@ app.post('/create', async (req, res) => {
                 }
             })
         })
-    } catch (e) {
-        console.log(e);
-    }    
-})
-
-// Route for post minutes
-app.post('/createNew', async (req, res) => {
-    try {
-        const type = req.body.type;
-            const date = req.body.date;
-            const venue = req.body.venue;
-            const topic = req.body.topic;
-            const startTime = req.body.startTime;
-            const endTime = req.body.endTime;
-            const minutes = req.body.minutes;
-        
-            db.query('INSERT INTO corpers (name, email, phone, state, state_code, batch, lga, cds_group, ppa, profile_pic) VALUES(?,?,?,?,?,?,?,?,?,?)', [name,email,phone,state,statecode,batch,lga,cds,ppa,profilePic], (err, result) => {
-                if(err){
-                    console.log(err)
-                } else {
-                    res.send("Values Inserted");
-                    console.log(`${req.body.type} minutes created.`);
-                }
-            })
     } catch (e) {
         console.log(e);
     }    
