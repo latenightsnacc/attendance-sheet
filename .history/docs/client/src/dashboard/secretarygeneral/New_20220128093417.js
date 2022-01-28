@@ -29,26 +29,17 @@ const New = () => {
       }
 
       const createNew = async () => {
-        // const formData = new FormData();
-        // formData.append('startTime', details.startTime);
-        // formData.append('endTime', details.endTime);
-        // formData.append('venue', details.venue);
-        // formData.append('topic', details.topic);
-        // formData.append('minutes', details.minutes);
-        // formData.append('type', details.type);
-        // formData.append('date', details.date);
+        const formData = new FormData();
+        formData.append('startTime', details.startTime);
+        formData.append('endTime', details.endTime);
+        formData.append('venue', details.venue);
+        formData.append('topic', details.topic);
+        formData.append('minutes', details.minutes);
+        formData.append('for', details.type);
+        formData.append('date', details.date);
         try {
           await Axios.post("http://localhost:3030/createNew", 
-          {
-              startTime: details.startTime,
-              endTime: details.endTime,
-              venue: details.venue,
-              topic: details.topic,
-              type: details.type,
-              date: details.date,
-              minutes: details.minutes
-          },
-           {
+          formData, {
             headers: {"Content-Type": "multipart/form-data"}
           }).then(() => {
             console.log("New Minutes Saved.")
@@ -75,7 +66,7 @@ const New = () => {
             </div>
             <Spacer /> 
             <div className="m-auto md:w-4/6 w-full">
-                <form className="text-sm text-gray-700" onSubmit={createNew}>
+                <form className="text-sm text-gray-700">
                 <div className="m-auto  w-full flex flex-row items-center justify-between">
                     <div className="flex border-1 py-2 px-3 rounded flex-row items-center text-sm">
                         {/* <div class="no-underline rounded py-2 px-3 bg-green-100 cursor-pointer hover:bg-green-100 text-gray-800 hover:text-gray-800"><span class="md:hidden">M</span><span class="hidden md:inline">Meeting</span></div> */}
@@ -87,7 +78,6 @@ const New = () => {
                                 name="type" 
                                 value={"meeting"}
                                 className="border-1 rounded py-2 px-3 focus:outline-none"
-                                onChange={getDetails}
                             />  
                             <label className="ml-2" for={"meeting"}>Meeting </label>
                         </div>
@@ -95,10 +85,9 @@ const New = () => {
                             <input
                                 type={"radio"}
                                 id="event"
-                                name="type" 
+                                name="event" 
                                 value={"event"}
                                 className="border-1 rounded py-2 px-3 focus:outline-none"
-                                onChange={getDetails}
                             /> 
                             <label className="ml-2" for={"event"}>Event</label>
                         </div>
@@ -111,9 +100,7 @@ const New = () => {
                             type={"date"}
                             id="date"
                             name="date" 
-                            value={details.date}
                             className="border-1 rounded py-2 px-3 focus:outline-none"
-                            onChange={getDetails}
                             />  
                         </div>
                      
@@ -124,58 +111,49 @@ const New = () => {
                             <input 
                             type="time"
                             name="startTime"
-                            id="startTime" 
-                            value={details.startTime}
-                            className="border-1 rounded w-32 py-2 px-3 my-2 focus:outline-none"
-                            onChange={getDetails} />
+                            id="startTime"
+                            placeholder="Start Time" 
+                            className="border-1 rounded w-32 py-2 px-3 my-2 focus:outline-none" />
                         </div>
                         <div>
                             <label className="mr-2" for={"startTime"}>End: </label>
                             <input 
                             type="time"
                             name="endTime"
-                            id="endTime" 
-                            value={details.endTime}
-                            className={`border-1 rounded w-32 py-2 px-3 my-2 focus:outline-none`}
-                            onChange={getDetails}
-                             />
+                            id="endTime"
+                            placeholder="End Time" 
+                            className={`border-1 rounded w-32 py-2 px-3 my-2 focus:outline-none`} />
                         </div>
                         
                         
-                    </div>
+                        </div>
                         <input 
                         type="text"
                         name="venue"
                         id="venue"
                         placeholder="Venue" 
-                        className="border-1 rounded w-full py-2 px-3 my-2 focus:outline-none"
-                        value={details.venue}
-                        onChange={getDetails} />
+                        className="border-1 rounded w-full py-2 px-3 my-2 focus:outline-none" />
                     
-                        <input 
-                        type="text"
-                        name="topic"
-                        id="topic"
-                        placeholder="Topic" 
-                        className="border-1 rounded w-full py-2 px-3 my-2 focus:outline-none"
-                        value={details.topic}
-                        onChange={getDetails} />
+                    <input 
+                    type="text"
+                    name="topic"
+                    id="topic"
+                    placeholder="Topic" 
+                    className="border-1 rounded w-full py-2 px-3 my-2 focus:outline-none" />
 
-                        <textarea 
-                        placeholder="Minutes..."
-                        name="minutes"
-                        id="minutes"
-                        type="text"
-                        className="border-1 rounded w-full h-96 p-3 focus:outline-none"
-                        value={details.minutes}
-                        onChange={getDetails}></textarea>
+                    <textarea 
+                    placeholder="Minutes..."
+                    name="minutes"
+                    id="minutes"
+                    type="text"
+                    className="border-1 rounded w-full h-96 p-3 focus:outline-none"></textarea>
 
                     <SpacerSm />
 
                     <input
-                    type={'submit'} 
+                    type={'button'} 
                     value={'Save'}
-                    className="border-1 text-gray-400 text-center rounded w-full py-2 px-3 my-2 focus:outline-none hover:bg-green-500 hover:text-white hover:shadow-xl" />
+                    className="border-1 text-gray-400 text-center rounded w-full py-2 px-3 my-2 focus:outline-none" />
 
                 </form>
             </div>

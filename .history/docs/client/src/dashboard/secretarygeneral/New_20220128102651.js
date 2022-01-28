@@ -29,14 +29,14 @@ const New = () => {
       }
 
       const createNew = async () => {
-        // const formData = new FormData();
-        // formData.append('startTime', details.startTime);
-        // formData.append('endTime', details.endTime);
-        // formData.append('venue', details.venue);
-        // formData.append('topic', details.topic);
-        // formData.append('minutes', details.minutes);
-        // formData.append('type', details.type);
-        // formData.append('date', details.date);
+        const formData = new FormData();
+        formData.append('startTime', details.startTime);
+        formData.append('endTime', details.endTime);
+        formData.append('venue', details.venue);
+        formData.append('topic', details.topic);
+        formData.append('minutes', details.minutes);
+        formData.append('type', details.type);
+        formData.append('date', details.date);
         try {
           await Axios.post("http://localhost:3030/createNew", 
           {
@@ -46,7 +46,7 @@ const New = () => {
               topic: details.topic,
               type: details.type,
               date: details.date,
-              minutes: details.minutes
+              
           },
            {
             headers: {"Content-Type": "multipart/form-data"}

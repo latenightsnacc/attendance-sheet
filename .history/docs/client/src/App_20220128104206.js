@@ -43,7 +43,7 @@ function App() {
     formData.append('cds', corper.cds);
     formData.append('lga', corper.lga);
     formData.append('ppa', corper.ppa);
-    formData.append('profilePic', profilePic.file[0]);
+    formData.append('profilePic', profilePic.file);
     formData.append('profilePicName', profilePic.fileName);
     try {
       await Axios.post("http://localhost:3030/create", 

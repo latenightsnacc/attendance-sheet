@@ -63,7 +63,7 @@ app.post('/create', async (req, res) => {
             const lga = req.body.lga;
             const cds = req.body.cds;
             const ppa = req.body.ppa;
-            const profilePic = req.file.fileName;
+            const profilePic = req.file.filename;
         
             db.query('INSERT INTO corpers (name, email, phone, state, state_code, batch, lga, cds_group, ppa, profile_pic) VALUES(?,?,?,?,?,?,?,?,?,?)', [name,email,phone,state,statecode,batch,lga,cds,ppa,profilePic], (err, result) => {
                 if(err){
@@ -79,7 +79,7 @@ app.post('/create', async (req, res) => {
     }    
 })
 
-// Route for post new notes/minutes
+// Route for post minutes
 app.post('/createNew', async (req, res) => {
     try {
             const type = req.body.type;
@@ -89,15 +89,15 @@ app.post('/createNew', async (req, res) => {
             const startTime = req.body.startTime;
             const endTime = req.body.endTime;
             const minutes = req.body.minutes;
-            console.log(date);
-            // db.query('INSERT INTO notes (date, venue, topic, start_time, end_time, type, minutes) VALUES(?,?,?,?,?,?,?)', [date,venue,topic,startTime,endTime,type,minutes], (err, result) => {
-            //     if(err){
-            //         console.log(err)
-            //     } else {
-            //         res.send("Values Inserted");
-            //         console.log(`${req.body.type} minutes created.`);
-            //     }
-            // })
+        
+            db.query('INSERT INTO notes (name, email, phone, state, state_code, batch, lga, cds_group, ppa, profile_pic) VALUES(?,?,?,?,?,?,?,?,?,?)', [name,email,phone,state,statecode,batch,lga,cds,ppa,profilePic], (err, result) => {
+                if(err){
+                    console.log(err)
+                } else {
+                    res.send("Values Inserted");
+                    console.log(`${req.body.type} minutes created.`);
+                }
+            })
     } catch (e) {
         console.log(e);
     }    
