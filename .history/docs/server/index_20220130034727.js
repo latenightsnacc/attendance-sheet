@@ -10,9 +10,11 @@ const cors = require('cors');
 // Use Express Static Folder
 app.use(cors());
 app.use(express.static("./public"));
+const jsonParser = bodyParser.json();
+
 app.use(express.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
+const urlencodedParser = bodyParser.urlencoded({extended: false});
+
 
 //Database Connection
 const db = mysql.createConnection({
@@ -80,7 +82,7 @@ app.post('/create', async (req, res) => {
 })
 
 // Route for post new notes/minutes
-app.post("/new", (req, res) => {
+app.post('/new', (req, res) => {
     try {
             const type = req.body.type;
             const date = req.body.date;
@@ -89,7 +91,7 @@ app.post("/new", (req, res) => {
             const startTime = req.body.startTime;
             const endTime = req.body.endTime;
             const minutes = req.body.minutes;
-            console.log(`${req.body.minutes}`);
+            console.log(`${req.body}`);
             // db.query('INSERT INTO notes (date, venue, topic, start_time, end_time, type, minutes) VALUES(?,?,?,?,?,?,?)', [date,venue,topic,startTime,endTime,type,minutes], (err, result) => {
             //     if(err){
             //         console.log(err)

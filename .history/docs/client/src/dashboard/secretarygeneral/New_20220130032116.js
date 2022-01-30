@@ -28,8 +28,7 @@ const New = () => {
         });
       }
 
-      const createNew = async (e) => {
-          e.preventDefault();
+      const createNew = async () => {
           console.log(details);
         // const formData = new FormData();
         // formData.append('startTime', details.startTime);
@@ -40,7 +39,7 @@ const New = () => {
         // formData.append('type', details.type);
         // formData.append('date', details.date);
         try {
-          await Axios.post("http://localhost:3030/new", 
+          await Axios.post("http://localhost:3030/createNew", 
           {
               startTime: details.startTime,
               endTime: details.endTime,

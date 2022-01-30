@@ -28,8 +28,7 @@ const New = () => {
         });
       }
 
-      const createNew = async (e) => {
-          e.preventDefault();
+      const createNew = async () => {
           console.log(details);
         // const formData = new FormData();
         // formData.append('startTime', details.startTime);

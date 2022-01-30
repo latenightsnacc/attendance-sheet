@@ -80,7 +80,7 @@ app.post('/create', async (req, res) => {
 })
 
 // Route for post new notes/minutes
-app.post("/new", (req, res) => {
+app.post('"/new"', (req, res) => {
     try {
             const type = req.body.type;
             const date = req.body.date;

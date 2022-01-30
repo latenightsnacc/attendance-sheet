@@ -28,9 +28,7 @@ const New = () => {
         });
       }
 
-      const createNew = async (e) => {
-          e.preventDefault();
-          console.log(details);
+      const createNew = async () => {
         // const formData = new FormData();
         // formData.append('startTime', details.startTime);
         // formData.append('endTime', details.endTime);
@@ -40,7 +38,7 @@ const New = () => {
         // formData.append('type', details.type);
         // formData.append('date', details.date);
         try {
-          await Axios.post("http://localhost:3030/new", 
+          await Axios.post("http://localhost:3030/createNew", 
           {
               startTime: details.startTime,
               endTime: details.endTime,
@@ -77,7 +75,7 @@ const New = () => {
             </div>
             <Spacer /> 
             <div className="m-auto md:w-4/6 w-full">
-                <form onSubmit={createNew} className="text-sm text-gray-700" >
+                <form className="text-sm text-gray-700" onSubmit={createNew}>
                 <div className="m-auto  w-full flex flex-row items-center justify-between">
                     <div className="flex border-1 py-2 px-3 rounded flex-row items-center text-sm">
                         {/* <div class="no-underline rounded py-2 px-3 bg-green-100 cursor-pointer hover:bg-green-100 text-gray-800 hover:text-gray-800"><span class="md:hidden">M</span><span class="hidden md:inline">Meeting</span></div> */}
@@ -174,8 +172,10 @@ const New = () => {
 
                     <SpacerSm />
 
-                    <button type="submit" className="border-1 text-gray-400 text-center rounded w-full py-2 px-3 my-2 focus:outline-none hover:bg-green-500 hover:text-white hover:shadow-xl">Save</button>
-                    
+                    <button type="submit">Save</button>
+                    type={'submit'} 
+                    value={'Save'}
+                     />
 
                 </form>
             </div>

@@ -23,14 +23,19 @@ const New = () => {
     
       const getDetails = e => {
         setDetails({
-          ...details,
-          [e.target.name]: e.target.value
+        //   ...details,
+        //   [e.target.name]: e.target.value
+        startTime: '',
+        endTime: '',
+        venue: '',
+        topic: '',
+        minutes: '',
+        type: '',
+        date: ''
         });
       }
 
-      const createNew = async (e) => {
-          e.preventDefault();
-          console.log(details);
+      const createNew = async () => {
         // const formData = new FormData();
         // formData.append('startTime', details.startTime);
         // formData.append('endTime', details.endTime);
@@ -40,7 +45,7 @@ const New = () => {
         // formData.append('type', details.type);
         // formData.append('date', details.date);
         try {
-          await Axios.post("http://localhost:3030/new", 
+          await Axios.post("http://localhost:3030/createNew", 
           {
               startTime: details.startTime,
               endTime: details.endTime,
