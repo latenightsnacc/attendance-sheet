@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const bodyParser = require('body-parser');
 const multer = require('multer');
 const port = 3030;
 const mysql = require('mysql');
@@ -10,7 +11,8 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.static("./public"));
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 //Database Connection
 const db = mysql.createConnection({
@@ -40,7 +42,7 @@ const storage = multer.diskStorage({
 // Route for post data
 app.post("/create", async (req, res) => {
     try {
-        console.log(req.body);
+        conso
         let upload = multer({ storage: storage}).single('profilePic');
 
         upload(req, res, function(err) {
@@ -88,8 +90,7 @@ app.post("/new", (req, res) => {
             const startTime = req.body.startTime;
             const endTime = req.body.endTime;
             const minutes = req.body.minutes;
-            const note = res.json(req.body);
-            console.log(note);
+            console.log(`${req.body.minutes}`);
             // db.query('INSERT INTO notes (date, venue, topic, start_time, end_time, type, minutes) VALUES(?,?,?,?,?,?,?)', [date,venue,topic,startTime,endTime,type,minutes], (err, result) => {
             //     if(err){
             //         console.log(err)

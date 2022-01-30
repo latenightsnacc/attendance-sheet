@@ -89,7 +89,6 @@ app.post("/new", (req, res) => {
             const endTime = req.body.endTime;
             const minutes = req.body.minutes;
             const note = res.json(req.body);
-            console.log(note);
             // db.query('INSERT INTO notes (date, venue, topic, start_time, end_time, type, minutes) VALUES(?,?,?,?,?,?,?)', [date,venue,topic,startTime,endTime,type,minutes], (err, result) => {
             //     if(err){
             //         console.log(err)
